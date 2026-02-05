@@ -7,15 +7,12 @@
 namespace OC\AppFramework\OCS;
 
 use OCP\AppFramework\Http;
-use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCSController;
 
 /**
- * @psalm-import-type DataResponseType from DataResponse
- * @template S of Http::STATUS_*
- * @template-covariant T of DataResponseType
- * @template H of array<string, mixed>
- * @template-extends BaseResponse<Http::STATUS_*, DataResponseType, array<string, mixed>>
+ * @template-covariant S of Http::STATUS_*
+ * @template-covariant H of array<string, mixed>
+ * @template-extends BaseResponse<Http::STATUS_*, array|int|float|string|bool|object|null|\stdClass|\JsonSerializable, array<string, mixed>>
  */
 class V2Response extends BaseResponse {
 	/**
